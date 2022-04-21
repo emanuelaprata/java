@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+  class Main 
+  {
+    public static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+
+    int filhos[] = new int[5];
+    double salarioMax = 0;
+    double salario[] = new double[5];
+    int hab = 0;
+    for (int i = 0; i < filhos.length; i++) {
+    System.out.print("Informe o número de filhos: ");
+    filhos[i] = sc.nextInt();
+    System.out.print("Informe o seu salário: ");
+    salario[i] = sc.nextInt();
+    if (salario[i] > salarioMax) {
+      salarioMax = salario[i];
+    } 
+    if (salario[i] < 150){
+      hab = hab +1;
+    }
+    System.out.println("---------------");
+}
+ 
+    System.out.println("A média de filhos da população é: "   +Arrays.stream(filhos).sum()/filhos.length);      
+    System.out.println("A média do salário da população é: "+Arrays.stream(salario).sum()/salario.length);
+    System.out.println("O maior salário é de: " +salarioMax);
+    System.out.println("A porcentagem de habitantes com salário menor que 150: " +hab*100/5 +"%");
+}
+}
